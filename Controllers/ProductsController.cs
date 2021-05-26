@@ -25,7 +25,43 @@ namespace Shop2.Controllers
             Product product = await db.Products.FirstOrDefaultAsync(x=>x.Id==id);
             return product;
         }
-
+        [HttpPost]
+        public async Task<ActionResult<Product>> Post (Product product)
+        {
+            if (product == null)
+            {
+                return BadRequest();
+            }
+            db.Products.Add(product);
+            await db.SaveChangesAsync();
+            return Ok(product);
+        }
+        [HttpPut]
+        public async Task<ActionResult<Product>> Put (Product product)
+        {
+            if (product == null)
+            {
+                return BadRequest();
+            }
+            if (!db.Products.Any(x=>x.Id==product.Id))
+            {
+                return NotFound();
+            }
+            db.Update(product);
+            await db.SaveChangesAsync();
+            return Ok(product);
+        }
+        [HttpDelete]
+        public async Task<ActionResult<Product>> Delete (Product product)
+        {
+            if (product == null)
+            {
+                return BadRequest();
+            }
+            db.Products.Remove(product);
+            await db.SaveChangesAsync();
+            return Ok(product);
+        }
 
     }
 }
