@@ -14,7 +14,7 @@ namespace Shop2.Controllers
     public class CategoriesController : ControllerBase
     {
         databaseContext db = new databaseContext();
-        [HttpGet]
+        [HttpGet("get")]
         public async Task<ActionResult<IEnumerable<Category>>> Get()
         {
             return await db.Categories.ToListAsync();

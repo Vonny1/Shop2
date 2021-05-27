@@ -47,9 +47,9 @@ namespace Shop2
                 entity.HasIndex(e => e.Id, "IX_Product_Id")
                     .IsUnique();
 
-                entity.HasOne(d => d.Type)
+                entity.HasOne(d => d.Category)
                     .WithMany(p => p.Products)
-                    .HasForeignKey(d => d.TypeId);
+                    .HasForeignKey(d => d.CategoryId);
             });
 
             OnModelCreatingPartial(modelBuilder);

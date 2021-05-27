@@ -10,8 +10,8 @@ namespace Shop2.Models
         public long Id { get; set; }
         public string Name { get; set; }
         public double? Cost { get; set; }
-        public long? TypeId { get; set; }
+        public long? CategoryId { get; set; }
 
-        public virtual Category Type { get; set; }
+        public virtual Category Category { get; set; }
     }
 }
