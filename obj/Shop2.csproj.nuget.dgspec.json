@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "G:\\efimov\\Projects\\Shop2\\Shop2.csproj": {}
+    "D:\\Shop\\Shop2\\Shop2.csproj": {}
   },
   "projects": {
-    "G:\\efimov\\Projects\\Shop2\\Shop2.csproj": {
+    "D:\\Shop\\Shop2\\Shop2.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "G:\\efimov\\Projects\\Shop2\\Shop2.csproj",
+        "projectUniqueName": "D:\\Shop\\Shop2\\Shop2.csproj",
         "projectName": "Shop2",
-        "projectPath": "G:\\efimov\\Projects\\Shop2\\Shop2.csproj",
-        "packagesPath": "C:\\Users\\Vladislav.Efimov\\.nuget\\packages\\",
-        "outputPath": "G:\\efimov\\Projects\\Shop2\\obj\\",
+        "projectPath": "D:\\Shop\\Shop2\\Shop2.csproj",
+        "packagesPath": "C:\\Users\\vladi\\.nuget\\packages\\",
+        "outputPath": "D:\\Shop\\Shop2\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Vladislav.Efimov\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\vladi\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -41,6 +41,10 @@
           "targetAlias": "netcoreapp3.1",
           "dependencies": {
             "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.6, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
               "version": "[5.0.6, )"
             },
@@ -73,7 +77,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.203\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     }
