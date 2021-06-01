@@ -6,6 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Shop2.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Cors;
 
 namespace Shop2.Controllers
 {
@@ -74,7 +75,7 @@ namespace Shop2.Controllers
         {
             int max = page*12;
             int min = max - 11;
-            return await db.Products.
+            return await db.Products.Include("Category").
                 Where(x=>x.Id>=min && x.Id<=max).ToListAsync();
         }
 

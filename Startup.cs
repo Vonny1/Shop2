@@ -17,6 +17,9 @@ namespace Shop2
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers(); // используем контроллеры без представлений
+
+            services.AddCors();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -25,7 +28,10 @@ namespace Shop2
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+
+                app.UseCors(builder => builder.AllowAnyOrigin());
             }
+            app.UseCors();
 
             app.UseRouting();
 
