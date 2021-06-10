@@ -29,7 +29,10 @@ namespace Shop2
             {
                 app.UseDeveloperExceptionPage();
 
-                app.UseCors(builder => builder.AllowAnyOrigin());
+                app.UseCors(builder => builder
+                    .AllowAnyOrigin()
+                    .AllowAnyMethod()
+                    .AllowAnyHeader());
             }
             app.UseCors();
 

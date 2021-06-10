@@ -63,6 +63,18 @@ namespace Shop2.Controllers
             await db.SaveChangesAsync();
             return Ok(product);
         }
+        [HttpDelete("delete/{id:int}")]
+        public async Task<ActionResult<int>> Deleteid (int id)
+        {
+            Product product = await db.Products.FirstOrDefaultAsync(x => x.Id == id);
+            if (product == null)
+            {
+                return BadRequest();
+            }
+            db.Products.Remove(product);
+            await db.SaveChangesAsync();
+            return Ok(product);
+        }
 
         [HttpGet("count")]
         public async Task<ActionResult<int>> GetCount()
